@@ -238,6 +238,8 @@ export default function Home() {
             <li><button className="nav-btn" onClick={() => scrollTo("experience")}>Experience</button></li>
             <li><button className="nav-btn" onClick={() => scrollTo("projects")}>Projects</button></li>
             <li><button className="nav-btn" onClick={() => scrollTo("skills")}>Skills</button></li>
+            <li><button className="nav-btn" onClick={() => scrollTo("education")}>Education</button></li>
+            <li><button className="nav-btn" onClick={() => scrollTo("awards")}>Awards</button></li>
             <li><button className="nav-btn" onClick={() => scrollTo("contact")}>Contact</button></li>
           </ul>
           <div style={{ display: "flex", gap: "10px" }}>
@@ -462,20 +464,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* EDUCATION & CREDENTIALS */}
+        {/* EDUCATION SECTION */}
         <section id="education" className="section">
           <div className="section-header reveal">
-            <span className="section-tag">Credentials</span>
-            <h2>Education & Awards</h2>
+            <span className="section-tag">Academics</span>
+            <h2>Education</h2>
           </div>
 
-          <div className="edu-grid">
+          <div className="edu-grid" style={{ gridTemplateColumns: "1fr" }}>
             <div className="edu-card">
               <div className="edu-year">SEP 2020 – APR 2024</div>
               <div className="edu-title">B.Tech in Computer Science and Engineering</div>
               <div className="edu-sub">Chalapathi Institute of Engineering and Technology, Guntur, AP · CGPA: 7.9 / 10</div>
             </div>
+          </div>
+        </section>
 
+        {/* AWARDS & CERTIFICATIONS SECTION */}
+        <section id="awards" className="section">
+          <div className="section-header reveal">
+            <span className="section-tag">Recognitions & Training</span>
+            <h2>Awards & Certifications</h2>
+          </div>
+
+          <div className="edu-grid">
             <div className="edu-card">
               <div className="edu-year">COLLEGE HACKATHON (2024)</div>
               <div className="edu-title">Top 5 Winner — CNN Crop Disease AI</div>

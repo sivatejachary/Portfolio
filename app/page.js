@@ -52,6 +52,7 @@ const scrollTo = (id) => {
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
   const [projectsKey, setProjectsKey] = useState(0);
   const canvasRef = useRef(null);
@@ -250,27 +251,53 @@ export default function Home() {
 
       {/* HEADER */}
       <header>
-        <div className="top-name-banner">
+        <div className="top-name-banner nav-anim-banner">
           JAYAVARAPU SIVA TEJACHARY <span>· AI/ML ENGINEER</span>
         </div>
         <nav>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>
-            <span>HYDERABAD, TELANGANA, INDIA</span>
+            <span className="nav-anim-location">HYDERABAD, TELANGANA, INDIA</span>
           </div>
           <ul className="nav-links">
-            <li><button className="nav-btn" onClick={() => scrollTo("hero")}>About</button></li>
-            <li><button className="nav-btn" onClick={() => scrollTo("experience")}>Experience</button></li>
-            <li><button className="nav-btn" onClick={() => scrollTo("projects")}>Projects</button></li>
-            <li><button className="nav-btn" onClick={() => scrollTo("skills")}>Skills</button></li>
-            <li><button className="nav-btn" onClick={() => scrollTo("education")}>Education</button></li>
-            <li><button className="nav-btn" onClick={() => scrollTo("awards")}>Awards</button></li>
-            <li><button className="nav-btn" onClick={() => scrollTo("contact")}>Contact</button></li>
+            <li style={{ "--nav-i": 0 }}><button className="nav-btn" onClick={() => scrollTo("hero")}>About</button></li>
+            <li style={{ "--nav-i": 1 }}><button className="nav-btn" onClick={() => scrollTo("experience")}>Experience</button></li>
+            <li style={{ "--nav-i": 2 }}><button className="nav-btn" onClick={() => scrollTo("projects")}>Projects</button></li>
+            <li style={{ "--nav-i": 3 }}><button className="nav-btn" onClick={() => scrollTo("skills")}>Skills</button></li>
+            <li style={{ "--nav-i": 4 }}><button className="nav-btn" onClick={() => scrollTo("education")}>Education</button></li>
+            <li style={{ "--nav-i": 5 }}><button className="nav-btn" onClick={() => scrollTo("awards")}>Awards</button></li>
+            <li style={{ "--nav-i": 6 }}><button className="nav-btn" onClick={() => scrollTo("contact")}>Contact</button></li>
           </ul>
-          <div style={{ display: "flex", gap: "10px" }}>
-            <button onClick={() => setIsResumeModalOpen(true)} className="btn btn-secondary" style={{ padding: "5px 12px", fontSize: "12px" }}>View Resume</button>
-            <button onClick={() => scrollTo("contact")} className="btn btn-primary" style={{ padding: "5px 14px", fontSize: "12px" }}>Get in Touch</button>
+          <div className="nav-desktop-actions" style={{ display: "flex", gap: "10px" }}>
+            <button onClick={() => setIsResumeModalOpen(true)} className="btn btn-secondary nav-anim-btn-1" style={{ padding: "5px 12px", fontSize: "12px" }}>View Resume</button>
+            <button onClick={() => scrollTo("contact")} className="btn btn-primary nav-anim-btn-2" style={{ padding: "5px 14px", fontSize: "12px" }}>Get in Touch</button>
           </div>
+          <button
+            className="mobile-hamburger-btn"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Mobile Navigation Menu"
+          >
+            {isMobileMenuOpen ? "✕" : "☰"}
+          </button>
         </nav>
+
+        {/* MOBILE DROPDOWN MENU */}
+        {isMobileMenuOpen && (
+          <div className="mobile-dropdown-menu">
+            <ul className="mobile-menu-links">
+              <li><button onClick={() => { scrollTo("hero"); setIsMobileMenuOpen(false); }}>About</button></li>
+              <li><button onClick={() => { scrollTo("experience"); setIsMobileMenuOpen(false); }}>Experience</button></li>
+              <li><button onClick={() => { scrollTo("projects"); setIsMobileMenuOpen(false); }}>Projects</button></li>
+              <li><button onClick={() => { scrollTo("skills"); setIsMobileMenuOpen(false); }}>Skills</button></li>
+              <li><button onClick={() => { scrollTo("education"); setIsMobileMenuOpen(false); }}>Education</button></li>
+              <li><button onClick={() => { scrollTo("awards"); setIsMobileMenuOpen(false); }}>Awards</button></li>
+              <li><button onClick={() => { scrollTo("contact"); setIsMobileMenuOpen(false); }}>Contact</button></li>
+            </ul>
+            <div className="mobile-menu-actions">
+              <button onClick={() => { setIsResumeModalOpen(true); setIsMobileMenuOpen(false); }} className="btn btn-secondary" style={{ width: "100%", justifyContent: "center" }}>View Resume</button>
+              <button onClick={() => { scrollTo("contact"); setIsMobileMenuOpen(false); }} className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>Get in Touch</button>
+            </div>
+          </div>
+        )}
       </header>
 
       <div className="container">
@@ -288,9 +315,9 @@ export default function Home() {
 
             {/* RIGHT SIDE: NAME & ROLE */}
             <div className="hero-top-info">
-              <div className="main-name-title">JAYAVARAPU SIVA TEJACHARY</div>
-              <div className="role-subtitle">AI / ML ENGINEER</div>
-              <div className="hero-badge">
+              <div className="main-name-title hero-anim-name">JAYAVARAPU SIVA TEJACHARY</div>
+              <div className="role-subtitle hero-anim-role">AI / ML ENGINEER</div>
+              <div className="hero-badge hero-anim-badge">
                 2 Years Experience · Avataa Solutions (Hyderabad)
               </div>
             </div>
@@ -298,7 +325,7 @@ export default function Home() {
           </div>
 
           {/* MIDDLE SECTION: TYPEWRITER HEADLINE, DESCRIPTION & ACTIONS */}
-          <div className="hero-middle-section">
+          <div className="hero-middle-section hero-anim-middle">
             <h1>
               {typedText}
               {!typingDone && <span className="typewriter-cursor" aria-hidden="true" />}
@@ -603,9 +630,9 @@ export default function Home() {
               width: "36px",
               height: "36px",
               borderRadius: "50%",
-              background: "rgba(255, 255, 255, 0.1)",
+              background: "var(--chip-bg)",
               border: "1px solid var(--border-hover)",
-              color: "#ffffff",
+              color: "var(--text)",
               fontSize: "1.2rem",
               fontWeight: "bold",
               cursor: "pointer",
@@ -621,7 +648,7 @@ export default function Home() {
 
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", paddingBottom: "0.75rem", borderBottom: "1px solid var(--border)", paddingRight: "3.5rem" }}>
             <div>
-              <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff" }}>JAYAVARAPU SIVA TEJACHARY — RESUME</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: "700", color: "var(--text)" }}>JAYAVARAPU SIVA TEJACHARY — RESUME</h3>
               <p style={{ fontSize: "13px", color: "var(--cyan)", fontFamily: "var(--font-mono)" }}>AI/ML Engineer · 2 Years Experience</p>
             </div>
             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>

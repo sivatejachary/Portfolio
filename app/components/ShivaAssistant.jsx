@@ -197,7 +197,7 @@ export default function ShivaAssistant() {
           {/* Subtle First-Visit Tooltip */}
           {showTooltip && (
             <div className="shiva-fab-tooltip" onClick={handleOpenChat}>
-              <span>👋 Ask me about Shiva's AI/ML experience</span>
+              <span>👋 Ask me about Shiva</span>
               <button
                 className="shiva-tooltip-close"
                 onClick={(e) => { e.stopPropagation(); setShowTooltip(false); }}

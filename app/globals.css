@@ -3,46 +3,46 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 :root {
-  /* Backgrounds */
-  --bg: #0a0c14;
-  --bg-card: rgba(13, 17, 30, 0.75);
-  --bg-card-hover: rgba(18, 24, 42, 0.92);
+  /* Backgrounds — Default Light Mode */
+  --bg: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.90);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
 
   /* Borders */
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(99, 120, 255, 0.45);
+  --border: rgba(15, 23, 42, 0.08);
+  --border-hover: rgba(79, 70, 229, 0.45);
 
   /* Text */
-  --text: #e8eaf6;
-  --text-muted: #94a3b8;
+  --text: #0f172a;
+  --text-muted: #475569;
   --text-dim: #64748b;
 
   /* Primary — Indigo */
-  --primary: #6378ff;
-  --primary-dark: #3d50d8;
-  --primary-light: #818cf8;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --primary-light: #6366f1;
 
   /* Secondary — Amber / Gold */
-  --gold: #f0a500;
-  --gold-light: #fbbf24;
-  --gold-dim: rgba(240, 165, 0, 0.15);
+  --gold: #d97706;
+  --gold-light: #f59e0b;
+  --gold-dim: rgba(217, 119, 6, 0.12);
 
   /* Accent — Slate-Teal */
-  --teal: #2dd4bf;
-  --teal-dim: rgba(45, 212, 191, 0.12);
+  --teal: #0284c7;
+  --teal-dim: rgba(2, 132, 199, 0.12);
 
-  /* Legacy aliases (keep existing references working) */
-  --purple: #6378ff;
-  --purple-dark: #3d50d8;
-  --cyan: #2dd4bf;
-  --emerald: #34d399;
-  --pink: #f472b6;
-  --amber: #f0a500;
+  /* Legacy aliases */
+  --purple: #4f46e5;
+  --purple-dark: #3730a3;
+  --cyan: #0284c7;
+  --emerald: #059669;
+  --pink: #db2777;
+  --amber: #d97706;
 
   /* Glows */
-  --glow-violet: rgba(99, 120, 255, 0.16);
-  --glow-cyan: rgba(45, 212, 191, 0.12);
-  --glow-gold: rgba(240, 165, 0, 0.2);
+  --glow-violet: rgba(79, 70, 229, 0.12);
+  --glow-cyan: rgba(2, 132, 199, 0.12);
+  --glow-gold: rgba(217, 119, 6, 0.15);
 }
 
 html {
@@ -1847,433 +1847,434 @@ footer.visible {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   LIGHT THEME DESIGN SYSTEM (AUTOMATIC PREFERS-COLOR-SCHEME & DATA-THEME)
+   DARK THEME SYSTEM (ACTIVE IF USER SYSTEM IS IN DARK MODE)
    ───────────────────────────────────────────────────────────── */
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --bg: #f8fafc;
-    --bg-card: rgba(255, 255, 255, 0.90);
-    --bg-card-hover: rgba(255, 255, 255, 0.98);
+    --bg: #0a0c14;
+    --bg-card: rgba(13, 17, 30, 0.80);
+    --bg-card-hover: rgba(18, 24, 42, 0.95);
 
-    --border: rgba(15, 23, 42, 0.08);
-    --border-hover: rgba(79, 70, 229, 0.45);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(99, 120, 255, 0.45);
 
-    --text: #0f172a;
-    --text-muted: #475569;
+    --text: #e8eaf6;
+    --text-muted: #94a3b8;
     --text-dim: #64748b;
 
-    --primary: #4f46e5;
-    --primary-dark: #3730a3;
-    --primary-light: #6366f1;
+    --primary: #6378ff;
+    --primary-dark: #3d50d8;
+    --primary-light: #818cf8;
 
-    --gold: #d97706;
-    --gold-light: #f59e0b;
-    --gold-dim: rgba(217, 119, 6, 0.12);
+    --gold: #f0a500;
+    --gold-light: #fbbf24;
+    --gold-dim: rgba(240, 165, 0, 0.15);
 
-    --teal: #0284c7;
-    --teal-dim: rgba(2, 132, 199, 0.12);
+    --teal: #2dd4bf;
+    --teal-dim: rgba(45, 212, 191, 0.12);
 
-    --glow-violet: rgba(79, 70, 229, 0.12);
-    --glow-cyan: rgba(2, 132, 199, 0.12);
-    --glow-gold: rgba(217, 119, 6, 0.15);
+    --glow-violet: rgba(99, 120, 255, 0.16);
+    --glow-cyan: rgba(45, 212, 191, 0.12);
+    --glow-gold: rgba(240, 165, 0, 0.2);
   }
 
   body {
-    background: #f8fafc;
-    color: #0f172a;
+    background: #0a0c14;
+    color: #e8eaf6;
   }
 
   .grid-bg {
-    background-image: linear-gradient(rgba(79, 70, 229, 0.04) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(99, 120, 255, 0.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(99, 120, 255, 0.035) 1px, transparent 1px);
   }
 
   header {
-    background: rgba(248, 250, 252, 0.88);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    background: rgba(10, 12, 20, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: none;
   }
 
   .top-name-banner {
-    color: #475569;
+    color: var(--text-muted);
   }
 
   .nav-btn {
-    color: #334155;
+    color: var(--text-muted);
   }
 
   .nav-btn:hover {
-    color: #4f46e5;
+    color: var(--text);
   }
 
   .shiva-fab-content {
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(79, 70, 229, 0.3);
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    background: rgba(13, 17, 30, 0.92);
+    border: 1px solid rgba(99, 120, 255, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   }
 
   .shiva-fab-text {
-    color: #0f172a;
+    color: #e8eaf6;
   }
 
   .shiva-chat-window {
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+    background: rgba(10, 12, 20, 0.96);
+    border: 1px solid rgba(99, 120, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   }
 
   .shiva-chat-header {
-    background: rgba(241, 245, 249, 0.95);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(15, 20, 36, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .shiva-header-title {
-    color: #0f172a;
+    color: #ffffff;
   }
 
   .shiva-header-subtitle {
-    color: #475569;
+    color: #94a3b8;
   }
 
   .shiva-msg-bubble.bot {
-    background: rgba(241, 245, 249, 0.95);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    color: #0f172a;
+    background: rgba(18, 24, 42, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e8eaf6;
   }
 
   .shiva-msg-bubble.user {
-    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    background: linear-gradient(135deg, #6378ff, #3d50d8);
     color: #ffffff;
   }
 
   .shiva-prompt-chip {
-    background: rgba(241, 245, 249, 0.9);
-    border: 1px solid rgba(15, 23, 42, 0.1);
-    color: #334155;
+    background: rgba(18, 24, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
   }
 
   .shiva-prompt-chip:hover {
-    background: rgba(79, 70, 229, 0.1);
-    color: #4f46e5;
-    border-color: rgba(79, 70, 229, 0.4);
+    background: rgba(99, 120, 255, 0.15);
+    color: #818cf8;
+    border-color: rgba(99, 120, 255, 0.4);
   }
 
   .shiva-chat-input-area {
-    background: rgba(241, 245, 249, 0.8);
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(13, 17, 30, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .shiva-chat-input {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    color: #0f172a;
+    background: rgba(18, 24, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e8eaf6;
   }
 
   .shiva-fab-tooltip {
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(79, 70, 229, 0.3);
-    color: #0f172a;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    background: rgba(13, 17, 30, 0.95);
+    border: 1px solid rgba(99, 120, 255, 0.35);
+    color: #e8eaf6;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   }
 
   .exp-card, .project-card, .skill-card, .edu-card, .contact-box, .hero-profile-card, .hero-top-info, .hero-middle-section, .meta-card {
-    background: rgba(255, 255, 255, 0.90);
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    background: rgba(13, 17, 30, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: none;
   }
 
   .exp-card:hover, .project-card:hover, .skill-card:hover, .edu-card:hover {
-    background: rgba(255, 255, 255, 0.98);
-    border-color: rgba(79, 70, 229, 0.4);
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    background: rgba(18, 24, 42, 0.92);
+    border-color: rgba(99, 120, 255, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   }
 
   .btn-secondary {
-    background: rgba(241, 245, 249, 0.9);
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    color: #0f172a;
+    background: rgba(18, 24, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e8eaf6;
   }
 
   .btn-secondary:hover {
-    background: rgba(226, 232, 240, 1);
-    color: #0f172a;
+    background: rgba(30, 40, 70, 0.9);
+    color: #ffffff;
   }
 
   .tech-chip, .skill-tag {
-    background: rgba(241, 245, 249, 0.9);
-    border: 1px solid rgba(15, 23, 42, 0.1);
-    color: #334155;
+    background: rgba(18, 24, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
   }
 
   .filter-btn {
-    background: rgba(241, 245, 249, 0.9);
-    border: 1px solid rgba(15, 23, 42, 0.1);
-    color: #334155;
+    background: rgba(18, 24, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
   }
 
   .filter-btn.active {
-    background: #4f46e5;
+    background: #6378ff;
     color: #ffffff;
-    border-color: #4f46e5;
+    border-color: #6378ff;
   }
 
   .main-name-title {
-    color: #0f172a;
+    color: #e8eaf6;
   }
 
   .hero-middle-section h1 {
-    color: #0f172a;
+    color: #e8eaf6;
   }
 
   .hero-desc {
-    color: #334155;
+    color: #94a3b8;
   }
 
   .exp-role, .project-title, .skill-card-title, .edu-degree, .contact-box-title {
-    color: #0f172a;
+    color: #e8eaf6;
   }
 
   .exp-company, .project-desc, .edu-school, .contact-box-desc {
-    color: #475569;
+    color: #94a3b8;
   }
 
   .shiva-chat-footer {
-    background: rgba(241, 245, 249, 0.98);
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
-    color: #64748b;
+    background: rgba(12, 16, 28, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
   }
 
   .shiva-icon-btn {
-    color: #475569;
+    color: #94a3b8;
   }
 
   .shiva-icon-btn:hover {
-    color: #0f172a;
-    background: rgba(15, 23, 42, 0.06);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
-/* Explicit data-theme="light" overrides */
-[data-theme="light"] {
-  --bg: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.90);
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
+/* Explicit data-theme="dark" overrides */
+[data-theme="dark"] {
+  --bg: #0a0c14;
+  --bg-card: rgba(13, 17, 30, 0.80);
+  --bg-card-hover: rgba(18, 24, 42, 0.95);
 
-  --border: rgba(15, 23, 42, 0.08);
-  --border-hover: rgba(79, 70, 229, 0.45);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(99, 120, 255, 0.45);
 
-  --text: #0f172a;
-  --text-muted: #475569;
+  --text: #e8eaf6;
+  --text-muted: #94a3b8;
   --text-dim: #64748b;
 
-  --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --primary-light: #6366f1;
+  --primary: #6378ff;
+  --primary-dark: #3d50d8;
+  --primary-light: #818cf8;
 
-  --gold: #d97706;
-  --gold-light: #f59e0b;
-  --gold-dim: rgba(217, 119, 6, 0.12);
+  --gold: #f0a500;
+  --gold-light: #fbbf24;
+  --gold-dim: rgba(240, 165, 0, 0.15);
 
-  --teal: #0284c7;
-  --teal-dim: rgba(2, 132, 199, 0.12);
+  --teal: #2dd4bf;
+  --teal-dim: rgba(45, 212, 191, 0.12);
 
-  --glow-violet: rgba(79, 70, 229, 0.12);
-  --glow-cyan: rgba(2, 132, 199, 0.12);
-  --glow-gold: rgba(217, 119, 6, 0.15);
+  --glow-violet: rgba(99, 120, 255, 0.16);
+  --glow-cyan: rgba(45, 212, 191, 0.12);
+  --glow-gold: rgba(240, 165, 0, 0.2);
 }
 
-[data-theme="light"] body {
-  background: #f8fafc;
-  color: #0f172a;
+[data-theme="dark"] body {
+  background: #0a0c14;
+  color: #e8eaf6;
 }
 
-[data-theme="light"] .grid-bg {
-  background-image: linear-gradient(rgba(79, 70, 229, 0.04) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+[data-theme="dark"] .grid-bg {
+  background-image: linear-gradient(rgba(99, 120, 255, 0.035) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(99, 120, 255, 0.035) 1px, transparent 1px);
 }
 
-[data-theme="light"] header {
-  background: rgba(248, 250, 252, 0.88);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+[data-theme="dark"] header {
+  background: rgba(10, 12, 20, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: none;
 }
 
-[data-theme="light"] .top-name-banner {
-  color: #475569;
+[data-theme="dark"] .top-name-banner {
+  color: var(--text-muted);
 }
 
-[data-theme="light"] .nav-btn {
-  color: #334155;
+[data-theme="dark"] .nav-btn {
+  color: var(--text-muted);
 }
 
-[data-theme="light"] .nav-btn:hover {
-  color: #4f46e5;
+[data-theme="dark"] .nav-btn:hover {
+  color: var(--text);
 }
 
-[data-theme="light"] .shiva-fab-content {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(79, 70, 229, 0.3);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+[data-theme="dark"] .shiva-fab-content {
+  background: rgba(13, 17, 30, 0.92);
+  border: 1px solid rgba(99, 120, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-[data-theme="light"] .shiva-fab-text {
-  color: #0f172a;
+[data-theme="dark"] .shiva-fab-text {
+  color: #e8eaf6;
 }
 
-[data-theme="light"] .shiva-chat-window {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+[data-theme="dark"] .shiva-chat-window {
+  background: rgba(10, 12, 20, 0.96);
+  border: 1px solid rgba(99, 120, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
-[data-theme="light"] .shiva-chat-header {
-  background: rgba(241, 245, 249, 0.95);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+[data-theme="dark"] .shiva-chat-header {
+  background: rgba(15, 20, 36, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="light"] .shiva-header-title {
-  color: #0f172a;
-}
-
-[data-theme="light"] .shiva-header-subtitle {
-  color: #475569;
-}
-
-[data-theme="light"] .shiva-msg-bubble.bot {
-  background: rgba(241, 245, 249, 0.95);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  color: #0f172a;
-}
-
-[data-theme="light"] .shiva-msg-bubble.user {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+[data-theme="dark"] .shiva-header-title {
   color: #ffffff;
 }
 
-[data-theme="light"] .shiva-prompt-chip {
-  background: rgba(241, 245, 249, 0.9);
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  color: #334155;
+[data-theme="dark"] .shiva-header-subtitle {
+  color: #94a3b8;
 }
 
-[data-theme="light"] .shiva-prompt-chip:hover {
-  background: rgba(79, 70, 229, 0.1);
-  color: #4f46e5;
-  border-color: rgba(79, 70, 229, 0.4);
+[data-theme="dark"] .shiva-msg-bubble.bot {
+  background: rgba(18, 24, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e8eaf6;
 }
 
-[data-theme="light"] .shiva-chat-input-area {
-  background: rgba(241, 245, 249, 0.8);
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-[data-theme="light"] .shiva-chat-input {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  color: #0f172a;
-}
-
-[data-theme="light"] .shiva-fab-tooltip {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(79, 70, 229, 0.3);
-  color: #0f172a;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
-}
-
-[data-theme="light"] .exp-card, 
-[data-theme="light"] .project-card, 
-[data-theme="light"] .skill-card, 
-[data-theme="light"] .edu-card, 
-[data-theme="light"] .contact-box, 
-[data-theme="light"] .hero-profile-card, 
-[data-theme="light"] .hero-top-info, 
-[data-theme="light"] .hero-middle-section, 
-[data-theme="light"] .meta-card {
-  background: rgba(255, 255, 255, 0.90);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-}
-
-[data-theme="light"] .exp-card:hover, 
-[data-theme="light"] .project-card:hover, 
-[data-theme="light"] .skill-card:hover, 
-[data-theme="light"] .edu-card:hover {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(79, 70, 229, 0.4);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-}
-
-[data-theme="light"] .btn-secondary {
-  background: rgba(241, 245, 249, 0.9);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  color: #0f172a;
-}
-
-[data-theme="light"] .btn-secondary:hover {
-  background: rgba(226, 232, 240, 1);
-  color: #0f172a;
-}
-
-[data-theme="light"] .tech-chip, 
-[data-theme="light"] .skill-tag {
-  background: rgba(241, 245, 249, 0.9);
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  color: #334155;
-}
-
-[data-theme="light"] .filter-btn {
-  background: rgba(241, 245, 249, 0.9);
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  color: #334155;
-}
-
-[data-theme="light"] .filter-btn.active {
-  background: #4f46e5;
+[data-theme="dark"] .shiva-msg-bubble.user {
+  background: linear-gradient(135deg, #6378ff, #3d50d8);
   color: #ffffff;
-  border-color: #4f46e5;
 }
 
-[data-theme="light"] .main-name-title {
-  color: #0f172a;
+[data-theme="dark"] .shiva-prompt-chip {
+  background: rgba(18, 24, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
 }
 
-[data-theme="light"] .hero-middle-section h1 {
-  color: #0f172a;
+[data-theme="dark"] .shiva-prompt-chip:hover {
+  background: rgba(99, 120, 255, 0.15);
+  color: #818cf8;
+  border-color: rgba(99, 120, 255, 0.4);
 }
 
-[data-theme="light"] .hero-desc {
-  color: #334155;
+[data-theme="dark"] .shiva-chat-input-area {
+  background: rgba(13, 17, 30, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="light"] .exp-role, 
-[data-theme="light"] .project-title, 
-[data-theme="light"] .skill-card-title, 
-[data-theme="light"] .edu-degree, 
-[data-theme="light"] .contact-box-title {
-  color: #0f172a;
+[data-theme="dark"] .shiva-chat-input {
+  background: rgba(18, 24, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8eaf6;
 }
 
-[data-theme="light"] .exp-company, 
-[data-theme="light"] .project-desc, 
-[data-theme="light"] .edu-school, 
-[data-theme="light"] .contact-box-desc {
-  color: #475569;
+[data-theme="dark"] .shiva-fab-tooltip {
+  background: rgba(13, 17, 30, 0.95);
+  border: 1px solid rgba(99, 120, 255, 0.35);
+  color: #e8eaf6;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="light"] .shiva-chat-footer {
-  background: rgba(241, 245, 249, 0.98);
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
-  color: #64748b;
+[data-theme="dark"] .exp-card, 
+[data-theme="dark"] .project-card, 
+[data-theme="dark"] .skill-card, 
+[data-theme="dark"] .edu-card, 
+[data-theme="dark"] .contact-box, 
+[data-theme="dark"] .hero-profile-card, 
+[data-theme="dark"] .hero-top-info, 
+[data-theme="dark"] .hero-middle-section, 
+[data-theme="dark"] .meta-card {
+  background: rgba(13, 17, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: none;
 }
 
-[data-theme="light"] .shiva-icon-btn {
-  color: #475569;
+[data-theme="dark"] .exp-card:hover, 
+[data-theme="dark"] .project-card:hover, 
+[data-theme="dark"] .skill-card:hover, 
+[data-theme="dark"] .edu-card:hover {
+  background: rgba(18, 24, 42, 0.92);
+  border-color: rgba(99, 120, 255, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="light"] .shiva-icon-btn:hover {
-  color: #0f172a;
-  background: rgba(15, 23, 42, 0.06);
+[data-theme="dark"] .btn-secondary {
+  background: rgba(18, 24, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8eaf6;
 }
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: rgba(30, 40, 70, 0.9);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .tech-chip, 
+[data-theme="dark"] .skill-tag {
+  background: rgba(18, 24, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .filter-btn {
+  background: rgba(18, 24, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background: #6378ff;
+  color: #ffffff;
+  border-color: #6378ff;
+}
+
+[data-theme="dark"] .main-name-title {
+  color: #e8eaf6;
+}
+
+[data-theme="dark"] .hero-middle-section h1 {
+  color: #e8eaf6;
+}
+
+[data-theme="dark"] .hero-desc {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .exp-role, 
+[data-theme="dark"] .project-title, 
+[data-theme="dark"] .skill-card-title, 
+[data-theme="dark"] .edu-degree, 
+[data-theme="dark"] .contact-box-title {
+  color: #e8eaf6;
+}
+
+[data-theme="dark"] .exp-company, 
+[data-theme="dark"] .project-desc, 
+[data-theme="dark"] .edu-school, 
+[data-theme="dark"] .contact-box-desc {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .shiva-chat-footer {
+  background: rgba(12, 16, 28, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .shiva-icon-btn {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .shiva-icon-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 
 

@@ -71,7 +71,6 @@ function renderMarkdown(rawText) {
 
 export default function ShivaAssistant() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -99,11 +98,11 @@ export default function ShivaAssistant() {
   };
 
   useEffect(() => {
-    if (isOpen && !isMinimized) {
+    if (isOpen) {
       scrollToBottom();
       setTimeout(() => inputRef.current?.focus(), 150);
     }
-  }, [messages, isOpen, isMinimized]);
+  }, [messages, isOpen]);
 
   // Recruiter-focused quick action prompts
   const quickPrompts = [
@@ -173,19 +172,8 @@ export default function ShivaAssistant() {
     }
   };
 
-  const clearChat = () => {
-    setMessages([
-      {
-        id: "welcome-reset",
-        sender: "bot",
-        answer: "Chat cleared! Ask me anything about Siva's professional experience, RAG projects, or technical skills."
-      }
-    ]);
-  };
-
   const handleOpenChat = () => {
     setIsOpen(true);
-    setIsMinimized(false);
     setShowTooltip(false);
   };
 
@@ -223,7 +211,7 @@ export default function ShivaAssistant() {
 
       {/* CHAT WINDOW */}
       {isOpen && (
-        <div className={`shiva-chat-window ${isMinimized ? "minimized" : ""}`}>
+        <div className="shiva-chat-window">
           
           {/* HEADER */}
           <div className="shiva-chat-header">
@@ -243,22 +231,6 @@ export default function ShivaAssistant() {
 
             <div className="shiva-header-actions">
               <button
-                onClick={clearChat}
-                className="shiva-icon-btn"
-                title="Clear Chat History"
-                aria-label="Clear chat history"
-              >
-                🗑️
-              </button>
-              <button
-                onClick={() => setIsMinimized(!isMinimized)}
-                className="shiva-icon-btn"
-                title={isMinimized ? "Expand Chat" : "Minimize Chat"}
-                aria-label="Minimize or expand chat"
-              >
-                {isMinimized ? "🗖" : "🗕"}
-              </button>
-              <button
                 onClick={() => setIsOpen(false)}
                 className="shiva-close-btn"
                 title="Close Assistant"
@@ -269,10 +241,8 @@ export default function ShivaAssistant() {
             </div>
           </div>
 
-          {!isMinimized && (
-            <>
-              {/* MESSAGES CONTAINER */}
-              <div className="shiva-chat-body">
+          {/* MESSAGES CONTAINER */}
+          <div className="shiva-chat-body">
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
@@ -353,8 +323,6 @@ export default function ShivaAssistant() {
               <div className="shiva-chat-footer">
                 <span>Shiva AI · Jayavarapu Siva Tejachary Portfolio Assistant</span>
               </div>
-            </>
-          )}
         </div>
       )}
     </>

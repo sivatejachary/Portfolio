@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import ShivaAssistant from "./components/ShivaAssistant";
 
 /* ── Typewriter hook ── */
 function useTypewriter(text, speed = 55, startDelay = 800) {
@@ -203,6 +204,17 @@ export default function Home() {
       desc: "Published 25 HuggingFace Spaces and 2 fine-tuned custom models (ai-talli 0.1B LLM and ai-thalli Stable Diffusion) for community NLP and GenAI experimentation.",
       tech: ["HuggingFace", "Transformers", "PyTorch"],
     },
+    {
+      id: "brreddy-client",
+      title: "B.R. Reddy Enterprises Web Platform",
+      category: "client",
+      featured: true,
+      tag: "CLIENT PROJECT",
+      date: "LIVE PRODUCTION",
+      desc: "Engineered and deployed the official production website and digital business platform for B.R. Reddy Enterprises. Built modern responsive UI/UX, optimized performance, and implemented SEO best practices.",
+      tech: ["Web Development", "Responsive UI/UX", "SEO", "Production App"],
+      link: "https://www.brreddyenterprises.in/"
+    },
   ];
 
   const filteredProjects = activeFilter === "all"
@@ -364,6 +376,7 @@ export default function Home() {
 
           <div className="filter-bar">
             <button className={`filter-btn ${activeFilter === "all" ? "active" : ""}`} onClick={() => handleFilterChange("all")}>All Projects</button>
+            <button className={`filter-btn ${activeFilter === "client" ? "active" : ""}`} onClick={() => handleFilterChange("client")}>Client Projects</button>
             <button className={`filter-btn ${activeFilter === "rag" ? "active" : ""}`} onClick={() => handleFilterChange("rag")}>Enterprise RAG & Doc AI</button>
             <button className={`filter-btn ${activeFilter === "nlp" ? "active" : ""}`} onClick={() => handleFilterChange("nlp")}>NLP & Automation</button>
             <button className={`filter-btn ${activeFilter === "cv" ? "active" : ""}`} onClick={() => handleFilterChange("cv")}>Computer Vision</button>
@@ -383,6 +396,19 @@ export default function Home() {
                     <span key={idx} className="tech-chip">{t}</span>
                   ))}
                 </div>
+                {p.link && (
+                  <div style={{ marginTop: "14px" }}>
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary"
+                      style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", padding: "6px 14px", textDecoration: "none" }}
+                    >
+                      🌐 Visit Live Website →
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -602,6 +628,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* FLOATING SHIVA AI RAG ASSISTANT CHATBOT */}
+      <ShivaAssistant />
     </>
   );
 }

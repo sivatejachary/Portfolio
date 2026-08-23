@@ -16,6 +16,11 @@ export const metadata = {
   description: "Portfolio of Jayavarapu Siva Tejachary, AI/ML Engineer with 2 years of experience at Avataa Solutions building Enterprise RAG platforms, FastAPI services, and LLM applications.",
   keywords: ["Jayavarapu Siva Tejachary", "AI Engineer", "ML Engineer", "FastAPI", "LangChain", "LangGraph", "OpenAI", "Gemini", "RAG", "Qdrant", "PostgreSQL", "Avataa Solutions", "Hyderabad"],
   authors: [{ name: "Jayavarapu Siva Tejachary" }],
+  icons: {
+    icon: "/profile.png",
+    shortcut: "/profile.png",
+    apple: "/profile.png",
+  },
   openGraph: {
     title: "JAYAVARAPU SIVA TEJACHARY — AI / ML Engineer",
     description: "AI/ML Engineer with 2 years of experience developing scalable AI applications using Python, FastAPI, OpenAI, Gemini, and RAG.",

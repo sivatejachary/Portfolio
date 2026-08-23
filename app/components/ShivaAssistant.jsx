@@ -236,7 +236,7 @@ export default function ShivaAssistant() {
                   Shiva AI
                 </div>
                 <div className="shiva-header-subtitle">
-                  AI assistant for Jayavarapu Siva Tejachary's profile
+                  Jayavarapu Siva Tejachary Portfolio Assistant
                 </div>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function ShivaAssistant() {
                 onClick={clearChat}
                 className="shiva-icon-btn"
                 title="Clear Chat History"
-                aria-label="Clear chat"
+                aria-label="Clear chat history"
               >
                 🗑️
               </button>
@@ -254,15 +254,15 @@ export default function ShivaAssistant() {
                 onClick={() => setIsMinimized(!isMinimized)}
                 className="shiva-icon-btn"
                 title={isMinimized ? "Expand Chat" : "Minimize Chat"}
-                aria-label="Minimize chat"
+                aria-label="Minimize or expand chat"
               >
                 {isMinimized ? "🗖" : "🗕"}
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="shiva-icon-btn close"
+                className="shiva-close-btn"
                 title="Close Assistant"
-                aria-label="Close chat"
+                aria-label="Close Shiva AI Assistant"
               >
                 ✕
               </button>

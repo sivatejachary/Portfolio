@@ -110,6 +110,18 @@ export default function Home() {
     };
   }, []);
 
+  // ── Dynamic system theme listener (prefers-color-scheme) ──
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const applySystemTheme = (e) => {
+      document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
+    };
+    applySystemTheme(media);
+    media.addEventListener("change", applySystemTheme);
+    return () => media.removeEventListener("change", applySystemTheme);
+  }, []);
+
   // ── Always start at top on refresh ──
   useEffect(() => {
     sessionStorage.removeItem("scrollY");

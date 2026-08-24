@@ -12,7 +12,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://sivatejachary.vercel.app"),
+  metadataBase: new URL("https://jayavarapu-siva-tejachary.vercel.app"),
   title: {
     default: "Jayavarapu Siva Tejachary | AI/ML Engineer & RAG Specialist",
     template: "%s | Jayavarapu Siva Tejachary"
@@ -54,7 +54,7 @@ export const metadata = {
   openGraph: {
     title: "Jayavarapu Siva Tejachary | AI/ML Engineer & RAG Specialist",
     description: "AI/ML Engineer with 2 years of experience at Avataa Solutions developing production AI solutions using Python, FastAPI, OpenAI, Gemini, LangChain, LangGraph, and RAG.",
-    url: "https://sivatejachary.vercel.app",
+    url: "https://jayavarapu-siva-tejachary.vercel.app",
     siteName: "Jayavarapu Siva Tejachary Portfolio",
     images: [
       {
@@ -75,7 +75,7 @@ export const metadata = {
     creator: "@sivatejachary"
   },
   alternates: {
-    canonical: "https://sivatejachary.vercel.app"
+    canonical: "https://jayavarapu-siva-tejachary.vercel.app"
   }
 };
 
@@ -113,8 +113,8 @@ export default function RootLayout({ children }) {
       "addressRegion": "Telangana",
       "addressCountry": "India"
     },
-    "url": "https://sivatejachary.vercel.app",
-    "image": "https://sivatejachary.vercel.app/profile.png",
+    "url": "https://jayavarapu-siva-tejachary.vercel.app",
+    "image": "https://jayavarapu-siva-tejachary.vercel.app/profile.png",
     "sameAs": [
       "https://github.com/sivatejachary",
       "https://www.linkedin.com/in/jayavarapu-siva-tejachary/",

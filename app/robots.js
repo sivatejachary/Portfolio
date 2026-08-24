@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://sivatejachary.vercel.app/sitemap.xml",
+    sitemap: "https://jayavarapu-siva-tejachary.vercel.app/sitemap.xml",
   };
 }

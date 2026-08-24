@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://sivatejachary.vercel.app";
+  const baseUrl = "https://jayavarapu-siva-tejachary.vercel.app";
 
   return [
     {

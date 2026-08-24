@@ -17,20 +17,20 @@ export const metadata = {
     default: "Jayavarapu Siva Tejachary | AI/ML Engineer & RAG Specialist",
     template: "%s | Jayavarapu Siva Tejachary"
   },
-  description: "Official portfolio of Jayavarapu Siva Tejachary — AI/ML Engineer with 2 years of experience at Avataa Solutions (Hyderabad) building Enterprise RAG platforms, FastAPI backend microservices, OpenAI & Gemini LLM applications, and B.R. Reddy Enterprises client platforms.",
+  description: "Jayavarapu Siva Tejachary is an AI/ML Engineer with 2 years of experience building AI applications, LLM solutions, RAG systems, FastAPI services, and production AI solutions at Avataa Solutions, Hyderabad.",
   keywords: [
     "Jayavarapu Siva Tejachary",
-    "Siva Tejachary",
     "Jayavarapu Siva",
-    "Siva Tejachary AI ML Engineer",
-    "Siva Tejachary Portfolio",
+    "Siva Tejachary",
+    "Jayavarapu Siva Tejachary AI ML Engineer",
+    "Jayavarapu Siva Tejachary AI Engineer",
+    "Jayavarapu Siva Tejachary RAG",
+    "Jayavarapu Siva Tejachary portfolio",
     "AI ML Engineer Hyderabad",
-    "Enterprise RAG Platform",
     "Avataa Solutions",
     "FastAPI AI Engineer",
     "OpenAI Gemini Engineer",
-    "Qdrant Vector DB",
-    "B.R. Reddy Enterprises"
+    "Qdrant Vector DB"
   ],
   authors: [{ name: "Jayavarapu Siva Tejachary", url: "https://github.com/sivatejachary" }],
   creator: "Jayavarapu Siva Tejachary",
@@ -47,42 +47,46 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/profile.png",
-    shortcut: "/profile.png",
-    apple: "/profile.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/jayavarapu-siva-tejachary-ai-ml-engineer.png", type: "image/png" }
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/jayavarapu-siva-tejachary-ai-ml-engineer.png",
   },
   openGraph: {
     title: "Jayavarapu Siva Tejachary | AI/ML Engineer & RAG Specialist",
-    description: "AI/ML Engineer with 2 years of experience at Avataa Solutions developing production AI solutions using Python, FastAPI, OpenAI, Gemini, LangChain, LangGraph, and RAG.",
-    url: "https://jayavarapu-siva-tejachary.vercel.app",
-    siteName: "Jayavarapu Siva Tejachary Portfolio",
+    description: "Official portfolio of Jayavarapu Siva Tejachary, AI/ML Engineer specializing in AI applications, LLMs and RAG.",
+    url: "https://jayavarapu-siva-tejachary.vercel.app/",
+    siteName: "Jayavarapu Siva Tejachary",
     images: [
       {
-        url: "/profile.png",
+        url: "https://jayavarapu-siva-tejachary.vercel.app/jayavarapu-siva-tejachary-ai-ml-engineer.png",
         width: 800,
         height: 800,
         alt: "Jayavarapu Siva Tejachary - AI/ML Engineer"
       }
     ],
     locale: "en_IN",
-    type: "profile",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jayavarapu Siva Tejachary | AI/ML Engineer & RAG Specialist",
-    description: "AI/ML Engineer with 2 years of experience developing production AI solutions using Python, FastAPI, OpenAI, Gemini, and RAG.",
-    images: ["/profile.png"],
+    title: "Jayavarapu Siva Tejachary | AI/ML Engineer",
+    description: "Official portfolio of Jayavarapu Siva Tejachary.",
+    images: ["https://jayavarapu-siva-tejachary.vercel.app/jayavarapu-siva-tejachary-ai-ml-engineer.png"],
     creator: "@sivatejachary"
   },
   alternates: {
-    canonical: "https://jayavarapu-siva-tejachary.vercel.app"
+    canonical: "https://jayavarapu-siva-tejachary.vercel.app/"
   }
 };
 
 export default function RootLayout({ children }) {
-  const jsonLd = {
+  const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://jayavarapu-siva-tejachary.vercel.app/#person",
     "name": "Jayavarapu Siva Tejachary",
     "alternateName": [
       "Siva Tejachary",
@@ -90,15 +94,18 @@ export default function RootLayout({ children }) {
       "J. Siva Tejachary",
       "Sivatejachary"
     ],
-    "jobTitle": "AI / ML Engineer",
+    "url": "https://jayavarapu-siva-tejachary.vercel.app/",
+    "image": "https://jayavarapu-siva-tejachary.vercel.app/jayavarapu-siva-tejachary-ai-ml-engineer.png",
+    "jobTitle": "AI/ML Engineer",
+    "description": "AI/ML Engineer with 2 years of experience building AI applications, LLM solutions, and RAG systems.",
     "worksFor": {
       "@type": "Organization",
-      "name": "Avataa Solutions Pvt. Ltd.",
+      "name": "Avataa Solutions",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Hyderabad",
         "addressRegion": "Telangana",
-        "addressCountry": "India"
+        "addressCountry": "IN"
       }
     },
     "alumniOf": {
@@ -111,15 +118,11 @@ export default function RootLayout({ children }) {
       "@type": "PostalAddress",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
-      "addressCountry": "India"
+      "addressCountry": "IN"
     },
-    "url": "https://jayavarapu-siva-tejachary.vercel.app",
-    "image": "https://jayavarapu-siva-tejachary.vercel.app/profile.png",
     "sameAs": [
-      "https://github.com/sivatejachary",
       "https://www.linkedin.com/in/jayavarapu-siva-tejachary/",
-      "https://huggingface.co/Shiva-teja-chary",
-      "https://www.brreddyenterprises.in/"
+      "https://github.com/sivatejachary"
     ],
     "knowsAbout": [
       "Artificial Intelligence",
@@ -132,18 +135,31 @@ export default function RootLayout({ children }) {
       "LangChain",
       "LangGraph",
       "Qdrant Vector DB",
-      "PostgreSQL",
-      "Azure OCR & NER",
-      "OpenAI & Gemini API"
+      "PostgreSQL"
     ]
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://jayavarapu-siva-tejachary.vercel.app/#website",
+    "url": "https://jayavarapu-siva-tejachary.vercel.app/",
+    "name": "Jayavarapu Siva Tejachary",
+    "description": "Official portfolio website of Jayavarapu Siva Tejachary, AI/ML Engineer."
   };
 
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/jayavarapu-siva-tejachary-ai-ml-engineer.png" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body>{children}</body>

@@ -728,7 +728,7 @@ nav {
   }
 }
 
-h1 {
+h1, .hero-headline {
   font-size: clamp(2.4rem, 4.2vw, 3.6rem);
   font-weight: 800;
   line-height: 1.15;

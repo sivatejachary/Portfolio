@@ -323,12 +323,12 @@ export default function Home() {
 
             {/* LEFT SIDE: PROFILE PHOTO */}
             <div className="hero-profile-card">
-              <img src="/profile.png" alt="Jayavarapu Siva Tejachary" className="profile-img" />
+              <img src="/jayavarapu-siva-tejachary-ai-ml-engineer.png" alt="Jayavarapu Siva Tejachary - AI/ML Engineer" className="profile-img" />
             </div>
 
             {/* RIGHT SIDE: NAME & ROLE */}
             <div className="hero-top-info">
-              <div className="main-name-title hero-anim-name">JAYAVARAPU SIVA TEJACHARY</div>
+              <h1 className="main-name-title hero-anim-name">JAYAVARAPU SIVA TEJACHARY</h1>
               <div className="role-subtitle hero-anim-role">AI / ML ENGINEER</div>
               <div className="hero-badge hero-anim-badge">
                 2 Years Experience · Avataa Solutions (Hyderabad)
@@ -339,10 +339,10 @@ export default function Home() {
 
           {/* MIDDLE SECTION: TYPEWRITER HEADLINE, DESCRIPTION & ACTIONS */}
           <div className="hero-middle-section hero-anim-middle">
-            <h1>
+            <h2 className="hero-headline">
               {typedText}
               {!typingDone && <span className="typewriter-cursor" aria-hidden="true" />}
-            </h1>
+            </h2>
 
             <p className="hero-desc">
               AI/ML Engineer with 2 years of experience at <strong>Avataa Solutions (Hyderabad)</strong> developing production AI solutions using <strong>Python, FastAPI, OpenAI, Gemini, LangChain, LangGraph, and Retrieval-Augmented Generation (RAG)</strong>.

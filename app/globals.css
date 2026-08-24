@@ -1323,7 +1323,15 @@ footer {
 }
 
 @media(max-width: 768px) {
-  /* 1. Header Brand */
+  /* 1. Global Container & Header Brand */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-inline: clamp(12px, 3.5vw, 24px) !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+  }
+
   .top-name-banner.scrolled-visible {
     flex-direction: column;
     gap: 3px;
@@ -1358,11 +1366,14 @@ footer {
   }
   nav {
     padding: 0 1rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* 2. Mobile Hero Layout (Strict Flex Column, min-width 0, max-width calc(100vw - 32px)) */
   #hero {
-    padding-top: calc(88px + 20px);
+    padding-top: calc(88px + 16px);
     padding-bottom: 2rem;
     width: 100% !important;
     max-width: 100% !important;
@@ -1383,7 +1394,7 @@ footer {
   }
 
   .hero-profile-card {
-    width: min(210px, 65vw) !important;
+    width: min(210px, 60vw) !important;
     max-width: calc(100vw - 32px) !important;
     min-width: 0 !important;
     height: auto !important;
@@ -1424,12 +1435,12 @@ footer {
     max-width: 100% !important;
     min-width: 0 !important;
     text-align: center !important;
-    font-size: clamp(1.2rem, 5.5vw, 1.85rem) !important;
+    font-size: clamp(1.15rem, 5.2vw, 1.8rem) !important;
     letter-spacing: clamp(0em, 0.15vw, 0.04em) !important;
     line-height: 1.25 !important;
     box-sizing: border-box !important;
     overflow-wrap: break-word !important;
-    word-break: break-word !important;
+    word-break: normal !important;
     white-space: normal !important;
     margin-bottom: 0.35rem !important;
   }
@@ -1439,7 +1450,7 @@ footer {
     max-width: 100% !important;
     min-width: 0 !important;
     text-align: center !important;
-    font-size: clamp(0.9rem, 4vw, 1.25rem) !important;
+    font-size: clamp(0.85rem, 3.8vw, 1.2rem) !important;
     letter-spacing: clamp(0.04em, 0.6vw, 0.08em) !important;
     margin-top: 8px !important;
     margin-bottom: 0.85rem !important;
@@ -1460,6 +1471,7 @@ footer {
     padding: 8px 14px !important;
     line-height: 1.4 !important;
     overflow-wrap: break-word !important;
+    word-break: normal !important;
   }
 
   .hero-middle-section {
@@ -1471,17 +1483,28 @@ footer {
   }
 
   .hero-middle-section h1 {
-    font-size: clamp(1.3rem, 5vw, 2rem) !important;
+    font-size: clamp(1.25rem, 4.8vw, 1.95rem) !important;
     line-height: 1.35 !important;
     margin-bottom: 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
   }
 
   .hero-desc {
     font-size: clamp(0.85rem, 3.2vw, 0.98rem) !important;
     line-height: 1.6 !important;
+    width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .hero-actions {
@@ -1496,15 +1519,41 @@ footer {
 
   .hero-actions .btn {
     width: 100% !important;
+    max-width: 100% !important;
     justify-content: center !important;
+    text-align: center !important;
     font-size: 13px !important;
-    padding: 10px 16px !important;
+    padding: 10.5px 16px !important;
     box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
   }
 
   /* 3. Section Headings & General Elements */
+  .section {
+    padding: 3rem 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
   section h2 {
     font-size: clamp(1.4rem, 5.5vw, 2.1rem) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
   }
 
   .hero-meta-grid, .projects-grid, .skills-grid, .edu-grid, .contact-box {
@@ -1513,6 +1562,7 @@ footer {
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
+    gap: 1rem !important;
   }
 
   .project-card, .meta-card, .skill-card, .edu-card, .award-card {
@@ -1520,20 +1570,125 @@ footer {
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
+    padding: 1.25rem 1rem !important;
     overflow-wrap: anywhere !important;
     word-break: break-word !important;
+  }
+
+  .exp-top {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .exp-role {
+    font-size: clamp(1rem, 4vw, 1.2rem) !important;
+    width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .exp-company {
+    font-size: clamp(0.8rem, 3.2vw, 0.95rem) !important;
+    width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .exp-date {
+    font-size: clamp(0.75rem, 2.8vw, 0.85rem) !important;
+    width: 100% !important;
+  }
+
+  .exp-bullets {
+    padding-left: 1.2rem !important;
+    margin-top: 0.75rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .exp-bullets li {
+    font-size: clamp(0.82rem, 3vw, 0.95rem) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    line-height: 1.55 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .filter-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .filter-btn {
+    font-size: clamp(0.7rem, 2.8vw, 0.82rem) !important;
+    padding: 6px 10px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  .project-title {
+    font-size: clamp(1.05rem, 4vw, 1.3rem) !important;
+    width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .project-desc {
+    font-size: clamp(0.82rem, 3vw, 0.95rem) !important;
+    width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    line-height: 1.55 !important;
   }
 
   .project-card.featured {
     grid-column: span 1 !important;
   }
 
+  .contact-box {
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .contact-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .c-link {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    font-size: clamp(0.78rem, 2.9vw, 0.9rem) !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    justify-content: space-between !important;
+    padding: 10px 14px !important;
+  }
+
   footer {
     flex-direction: column !important;
-    gap: 1rem !important;
+    gap: 0.5rem !important;
     text-align: center !important;
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     box-sizing: border-box !important;
+    font-size: 12px !important;
   }
 }
 

@@ -252,7 +252,9 @@ export default function Home() {
       {/* HEADER */}
       <header>
         <div className="top-name-banner nav-anim-banner">
-          JAYAVARAPU SIVA TEJACHARY <span>· AI/ML ENGINEER</span>
+          <span className="banner-name">JAYAVARAPU SIVA TEJACHARY</span>
+          <span className="banner-sep">·</span>
+          <span className="banner-role">AI / ML ENGINEER</span>
         </div>
         <nav>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}>

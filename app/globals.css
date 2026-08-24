@@ -334,10 +334,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.top-name-banner span {
+.banner-name {
+  color: var(--text-muted) !important;
+}
+
+.banner-sep {
+  color: var(--text-muted) !important;
+  opacity: 0.8;
+}
+
+.banner-role {
   background: linear-gradient(135deg, var(--primary), var(--gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1289,6 +1298,33 @@ footer {
 }
 
 @media(max-width: 768px) {
+  .top-name-banner {
+    flex-direction: column;
+    gap: 3px;
+    padding: 8px 0.5rem;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.12em;
+  }
+  .banner-name {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(10.5px, 3.2vw, 13px);
+    white-space: nowrap;
+  }
+  .banner-sep {
+    display: none !important;
+  }
+  .banner-role {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(10px, 2.8vw, 12px);
+    letter-spacing: 0.16em;
+  }
   nav {
     padding: 0 1rem;
   }
@@ -1297,19 +1333,19 @@ footer {
     padding-bottom: 2rem;
   }
   .hero-profile-card {
-    animation: heroSlideMobileTop 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    animation: heroSlideMobileLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
   }
-  @keyframes heroSlideMobileTop {
-    0% { opacity: 0; transform: translateY(-70px); }
-    100% { opacity: 1; transform: translateY(0); }
+  @keyframes heroSlideMobileLeft {
+    0% { opacity: 0; transform: translateX(-100vw); }
+    100% { opacity: 1; transform: translateX(0); }
   }
 
   .hero-top-info {
-    animation: heroSlideMobileBottom 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+    animation: heroSlideMobileRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
   }
-  @keyframes heroSlideMobileBottom {
-    0% { opacity: 0; transform: translateY(70px); }
-    100% { opacity: 1; transform: translateY(0); }
+  @keyframes heroSlideMobileRight {
+    0% { opacity: 0; transform: translateX(100vw); }
+    100% { opacity: 1; transform: translateX(0); }
   }
   .hero-meta-grid, .projects-grid, .skills-grid, .edu-grid, .contact-box {
     grid-template-columns: 1fr;

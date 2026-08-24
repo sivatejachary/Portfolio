@@ -48,11 +48,13 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/jayavarapu-siva-tejachary-ai-ml-engineer.png", type: "image/png" }
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
     ],
-    shortcut: "/favicon.svg",
-    apple: "/jayavarapu-siva-tejachary-ai-ml-engineer.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Jayavarapu Siva Tejachary | AI/ML Engineer & RAG Specialist",
@@ -97,7 +99,7 @@ export default function RootLayout({ children }) {
     "url": "https://jayavarapu-siva-tejachary.vercel.app/",
     "image": "https://jayavarapu-siva-tejachary.vercel.app/jayavarapu-siva-tejachary-ai-ml-engineer.png",
     "jobTitle": "AI/ML Engineer",
-    "description": "AI/ML Engineer with 2 years of experience building AI applications, LLM solutions, and RAG systems.",
+    "description": "AI/ML Engineer with 2 years of experience building AI applications, LLM solutions and RAG systems.",
     "worksFor": {
       "@type": "Organization",
       "name": "Avataa Solutions",
@@ -151,8 +153,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/jayavarapu-siva-tejachary-ai-ml-engineer.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

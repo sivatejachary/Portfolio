@@ -322,7 +322,6 @@ header {
 
 .top-name-banner {
   text-align: center;
-  padding: 8px 1rem;
   background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.08), rgba(217, 119, 6, 0.08), transparent);
   border-bottom: 1px solid var(--border);
   font-family: var(--font-mono), monospace;
@@ -335,6 +334,32 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              padding 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity, max-height;
+  overflow: hidden;
+}
+
+.top-name-banner.scrolled-hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom-color: transparent;
+  pointer-events: none;
+}
+
+.top-name-banner.scrolled-visible {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 60px;
+  padding: 8px 1rem;
+  border-bottom-color: var(--border);
+  pointer-events: auto;
 }
 
 .banner-name {
@@ -1298,7 +1323,7 @@ footer {
 }
 
 @media(max-width: 768px) {
-  .top-name-banner {
+  .top-name-banner.scrolled-visible {
     flex-direction: column;
     gap: 3px;
     padding: 8px 0.5rem;
@@ -1307,6 +1332,7 @@ footer {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.12em;
+    max-height: 70px;
   }
   .banner-name {
     display: block;

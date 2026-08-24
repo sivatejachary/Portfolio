@@ -53,10 +53,21 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
   const [projectsKey, setProjectsKey] = useState(0);
   const canvasRef = useRef(null);
   const statsRef = useRef(null);
+
+  // ── Scroll position listener for header brand ──
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // ── Typewriter on headline ──
   const headline = "Building Scalable AI Applications, LLMs & Enterprise RAG.";
@@ -251,7 +262,7 @@ export default function Home() {
 
       {/* HEADER */}
       <header>
-        <div className="top-name-banner nav-anim-banner">
+        <div className={`top-name-banner ${isScrolled ? "scrolled-visible" : "scrolled-hidden"}`}>
           <span className="banner-name">JAYAVARAPU SIVA TEJACHARY</span>
           <span className="banner-sep">·</span>
           <span className="banner-role">AI / ML ENGINEER</span>
